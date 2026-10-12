@@ -13,7 +13,13 @@ type Props = {
   techPool: string[];
 };
 
-export default function ProjectFilters({ type, setType, tech, setTech, techPool }: Props) {
+export default function ProjectFilters({
+  type,
+  setType,
+  tech,
+  setTech,
+  techPool,
+}: Props) {
   const TYPES: ProjectType[] = ["all", "ML", "Analytics", "App"];
 
   return (

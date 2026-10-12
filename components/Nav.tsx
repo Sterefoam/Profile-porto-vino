@@ -1,6 +1,12 @@
 "use client";
 
-import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
+import {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from "react";
 import { motion, useReducedMotion } from "framer-motion";
 
 type LinkItem = { label: string; href: `#${string}` };
@@ -36,11 +42,13 @@ export default function Nav() {
     (rawKey: string) => (el: HTMLSpanElement | null) => {
       spanRefs.current[norm(rawKey)] = el;
     },
-    []
+    [],
   );
 
   const smoothJump = (href: `#${string}`) => {
-    document.querySelector(href)?.scrollIntoView({ behavior: "smooth", block: "start" });
+    document
+      .querySelector(href)
+      ?.scrollIntoView({ behavior: "smooth", block: "start" });
     history.replaceState(null, "", href);
   };
 
@@ -83,7 +91,10 @@ export default function Nav() {
           ticking = false;
           return;
         }
-        if (window.innerHeight + window.scrollY >= (doc.scrollHeight || document.body.scrollHeight) - 2) {
+        if (
+          window.innerHeight + window.scrollY >=
+          (doc.scrollHeight || document.body.scrollHeight) - 2
+        ) {
           setActive("#contact");
           ticking = false;
           return;
@@ -132,7 +143,6 @@ export default function Nav() {
     const onResize = () => computeUnderline();
     window.addEventListener("resize", onResize);
 
-   
     document.fonts?.ready?.then?.(() => {
       requestAnimationFrame(() => {
         computeUnderline();
@@ -149,7 +159,7 @@ export default function Nav() {
   }, [computeUnderline]);
 
   return (
-    <header className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-black/30 border-b border-white/10">
+    <header className="sticky top-0 z-50 border-b border-white/10 backdrop-blur supports-[backdrop-filter]:bg-black/30">
       <div className="mx-auto max-w-[1240px] px-6 md:px-10">
         <div
           ref={wrapRef}
@@ -163,8 +173,10 @@ export default function Nav() {
                 href={href}
                 onClick={(e) => onClick(e, href)}
                 className={[
-                  "relative inline-flex items-center justify-center px-1 text-sm md:text-base transition-colors",
-                  isActive ? "text-[var(--text)]" : "text-[var(--subtle)] hover:text-[var(--text)]",
+                  "relative inline-flex items-center justify-center px-1 text-sm transition-colors md:text-base",
+                  isActive
+                    ? "text-[var(--text)]"
+                    : "text-[var(--subtle)] hover:text-[var(--text)]",
                 ].join(" ")}
               >
                 <span ref={setSpanRef(href)} className="inline-block px-0.5">
@@ -180,7 +192,12 @@ export default function Nav() {
               style={{ bottom: BOTTOM_OFFSET }}
               initial={false}
               animate={{ x: underline.x, width: underline.w }}
-              transition={{ type: "spring", stiffness: 520, damping: 36, mass: 0.45 }}
+              transition={{
+                type: "spring",
+                stiffness: 520,
+                damping: 36,
+                mass: 0.45,
+              }}
             />
           )}
         </div>

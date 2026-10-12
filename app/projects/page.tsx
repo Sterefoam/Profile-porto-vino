@@ -31,18 +31,18 @@ export default function ProjectsPage() {
   return (
     <main
       id="projects"
-      className="min-h-screen bg-[var(--bg)] text-[var(--text)] py-24 px-6 md:px-10"
+      className="min-h-screen bg-[var(--bg)] px-6 py-24 text-[var(--text)] md:px-10"
     >
       <motion.h2
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: [0.22, 0.61, 0.36, 1] }}
-        className="text-center text-4xl md:text-5xl font-bold mb-12"
+        className="mb-12 text-center text-4xl font-bold md:text-5xl"
       >
         Featured <span className="text-[var(--accent)]">Projects</span>
       </motion.h2>
 
-      <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+      <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-3">
         {projects.map((p, i) => (
           <motion.div
             key={i}
@@ -53,9 +53,9 @@ export default function ProjectsPage() {
               delay: i * 0.1,
               ease: [0.22, 0.61, 0.36, 1],
             }}
-            className="bg-[var(--muted)]/10 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden shadow-lg hover:shadow-cyan-500/10 transition"
+            className="overflow-hidden rounded-2xl border border-white/10 bg-[var(--muted)]/10 shadow-lg backdrop-blur-sm transition hover:shadow-cyan-500/10"
           >
-            <div className="relative w-full h-56">
+            <div className="relative h-56 w-full">
               <Image
                 src={p.image}
                 alt={p.title}
@@ -63,18 +63,18 @@ export default function ProjectsPage() {
                 className="object-cover"
               />
             </div>
-            <div className="p-6 flex flex-col gap-3">
+            <div className="flex flex-col gap-3 p-6">
               <h3 className="text-xl font-semibold text-[var(--accent)]">
                 {p.title}
               </h3>
-              <p className="text-sm text-[var(--subtle)] leading-relaxed">
+              <p className="text-sm leading-relaxed text-[var(--subtle)]">
                 {p.description}
               </p>
-              <div className="flex flex-wrap gap-2 mt-2">
+              <div className="mt-2 flex flex-wrap gap-2">
                 {p.tech.map((t) => (
                   <span
                     key={t}
-                    className="text-xs bg-[var(--accent)]/10 border border-[var(--accent)]/20 px-2 py-1 rounded-md text-[var(--accent)]"
+                    className="rounded-md border border-[var(--accent)]/20 bg-[var(--accent)]/10 px-2 py-1 text-xs text-[var(--accent)]"
                   >
                     {t}
                   </span>

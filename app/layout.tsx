@@ -18,11 +18,15 @@ export const viewport = {
   ],
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
       {/* ✅ safe-area top buat notch; ga ngubah desain */}
-      <body className="bg-[var(--bg)] text-[var(--text)] antialiased pt-[env(safe-area-inset-top)]">
+      <body className="bg-[var(--bg)] pt-[env(safe-area-inset-top)] text-[var(--text)] antialiased">
         <Nav />
         {children}
       </body>

@@ -26,7 +26,9 @@ export default function ProjectCard({ p }: { p: Project }) {
 
       <div className="mt-4 space-y-2">
         <div className="flex items-center justify-between">
-          <h3 className="text-[var(--text)] text-base font-semibold">{p.title}</h3>
+          <h3 className="text-base font-semibold text-[var(--text)]">
+            {p.title}
+          </h3>
           {p.kpi && (
             <span className="rounded-full bg-[var(--accent)]/15 px-2 py-0.5 text-xs text-[var(--accent)]">
               {p.kpi}
@@ -36,7 +38,7 @@ export default function ProjectCard({ p }: { p: Project }) {
         <p className="text-sm text-[var(--subtle)]">{p.summary}</p>
 
         <div className="mt-3 flex flex-wrap gap-2">
-          {p.tech.map(t => (
+          {p.tech.map((t) => (
             <span
               key={t}
               className="rounded-full border border-white/10 bg-[#1A1A22] px-2 py-0.5 text-[11px] text-[var(--text)]/80"

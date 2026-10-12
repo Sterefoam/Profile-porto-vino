@@ -7,7 +7,10 @@ type Tool = { name: string; icon: string };
 
 const TOOLS: Tool[] = [
   { name: "Visual Studio Code", icon: "/images/tools/vscode.svg" },
-  { name: "Visual Studio Insiders", icon: "/images/tools/visualstudio-insiders.svg" },
+  {
+    name: "Visual Studio Insiders",
+    icon: "/images/tools/visualstudio-insiders.svg",
+  },
   { name: "Google Colab", icon: "/images/tools/colab.svg" },
   { name: "Canva", icon: "/images/tools/canva.svg" },
   { name: "CapCut", icon: "/images/tools/capcut.svg" },
@@ -15,8 +18,8 @@ const TOOLS: Tool[] = [
 
 export default function Tools() {
   return (
-    <section className="container mx-auto max-w-[1240px] px-6 md:px-10 py-16">
-      <h3 className="text-xl md:text-2xl font-semibold mb-6">
+    <section className="container mx-auto max-w-[1240px] px-6 py-16 md:px-10">
+      <h3 className="mb-6 text-xl font-semibold md:text-2xl">
         Tools <span className="text-[var(--accent)]">I Use</span>
       </h3>
 
@@ -25,7 +28,7 @@ export default function Tools() {
           <motion.div
             key={t.name}
             whileHover={{ y: -3 }}
-            className="group rounded-xl border border-white/10 bg-[var(--elevated)] p-6 flex items-center justify-center h-32"
+            className="group flex h-32 items-center justify-center rounded-xl border border-white/10 bg-[var(--elevated)] p-6"
             title={t.name}
             aria-label={t.name}
           >
@@ -36,10 +39,10 @@ export default function Tools() {
                   alt={t.name}
                   fill
                   sizes="48px"
-                  className="object-contain filter grayscale saturate-0 contrast-100 group-hover:grayscale-0 group-hover:saturate-100 group-hover:brightness-100 transition duration-200"
+                  className="object-contain contrast-100 grayscale saturate-0 filter transition duration-200 group-hover:brightness-100 group-hover:grayscale-0 group-hover:saturate-100"
                 />
               </div>
-              <span className="text-sm text-[var(--subtle)] group-hover:text-[var(--text)] transition">
+              <span className="text-sm text-[var(--subtle)] transition group-hover:text-[var(--text)]">
                 {t.name}
               </span>
             </div>

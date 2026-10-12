@@ -13,7 +13,8 @@ export const PROJECTS: Project[] = [
   {
     slug: "bbca-timesnet",
     title: "Stock Forecasting (BBCA) with TimesNet",
-    summary: "Multistep time-series forecasting with robust feature scaling and cross-val.",
+    summary:
+      "Multistep time-series forecasting with robust feature scaling and cross-val.",
     type: "ML",
     tech: ["PyTorch", "TimesNet", "Pandas"],
     kpi: "+7.2% sMAPE vs ARIMA",
@@ -22,7 +23,8 @@ export const PROJECTS: Project[] = [
   {
     slug: "btc-prediction",
     title: "BTC Price Prediction",
-    summary: "Sequence modeling with attention, data pipeline streaming direct from API.",
+    summary:
+      "Sequence modeling with attention, data pipeline streaming direct from API.",
     type: "ML",
     tech: ["PyTorch", "Attention", "NumPy"],
     kpi: "MAE ↓ 11.4%",
@@ -31,7 +33,8 @@ export const PROJECTS: Project[] = [
   {
     slug: "plant-disease-resnet",
     title: "Plant Disease Classifier (ResNet)",
-    summary: "Transfer learning + fine-tune scheduler; grad-cam explainability.",
+    summary:
+      "Transfer learning + fine-tune scheduler; grad-cam explainability.",
     type: "ML",
     tech: ["ResNet", "Torchvision"],
     kpi: "F1 0.93",
